@@ -52,7 +52,11 @@ var app = {
                     //var isbnText = "0735619670"
             
             
-            <script src="https://www.googleapis.com/books/v1/volumes?q=isbn:0735619670&callback=handleResponse">/script>");
+                    var jq = document.createElement('script');
+        jq.src = "https://www.googleapis.com/books/v1/volumes?q=isbn:9780735619678&callback=handleResponse"
+        document.getElementsByTagName('head')[0].appendChild(jq);
+            
+            //<script src="https://www.googleapis.com/books/v1/volumes?q=isbn:0735619670&callback=handleResponse">/script>");
             
             console.log(result);
 
