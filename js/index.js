@@ -52,35 +52,40 @@ var app = {
                     //var isbnText = "0735619670"
             
             
-                    var jq = document.createElement('script');
+        var jq = document.createElement('script');
         jq.src = "https://www.googleapis.com/books/v1/volumes?q=isbn:9780735619678&callback=handleResponse"
         document.getElementsByTagName('head')[0].appendChild(jq);
-            
-                  function handleResponse(response) {
+
+      function handleResponse(response) {
       for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
-        document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
-        document.getElementById("img1").width += 200;
-        document.getElementById("img1").height += 200;
+        //document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
+        //document.getElementById("img1").width += 200;
+        //document.getElementById("img1").height += 200;
         document.getElementById("content").innerHTML += "<br>Title: " + item.volumeInfo.title;
         document.getElementById("content").innerHTML += "<br>Author: " + item.volumeInfo.authors;
         document.getElementById("content").innerHTML += "<br>Pulisher: " + item.volumeInfo.publisher;
         document.getElementById("content").innerHTML += "<br>Published Date: " + item.volumeInfo.publishedDate;
         document.getElementById("content").innerHTML += "<br>Book Summary: " + item.searchInfo.textSnippet;
-      }
-    }
+     }
+    } 
+            
+
                         
             console.log(result);
 
         }, 
         
-        //document.write("<script src='https://www.googleapis.com/books/v1/volumes?q=isbn:0735619670&callback=handleResponse'><\/script>")
-        
-
-        
+      
+  
         function (error) { 
             console.log("Scanning failed: ", error); 
         } );
     },
 
+
+    
 };
+
+
+        
