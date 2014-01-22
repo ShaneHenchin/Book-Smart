@@ -39,7 +39,7 @@ var app = {
 
         scanner.scan( function (result) { 
 
-            alert("Dave is a GENIUS\n" + 
+            alert("Barcode read...\n" + 
             "Result: " + result.text + "\n" + 
             "Format: " + result.format + "\n" + 
             "Cancelled: " + result.cancelled);  
@@ -51,17 +51,16 @@ var app = {
             document.getElementById("info").innerHTML = result.text;
                     //var isbnText = "0735619670"
             
-            
-        var jq = document.createElement('script');
+                   var jq = document.createElement('script');
         jq.src = "https://www.googleapis.com/books/v1/volumes?q=isbn:9780735619678&callback=handleResponse"
         document.getElementsByTagName('head')[0].appendChild(jq);
 
       function handleResponse(response) {
       for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
-        //document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
-        //document.getElementById("img1").width += 200;
-        //document.getElementById("img1").height += 200;
+        document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
+        document.getElementById("img1").width += 200;
+        document.getElementById("img1").height += 100;
         document.getElementById("content").innerHTML += "<br>Title: " + item.volumeInfo.title;
         document.getElementById("content").innerHTML += "<br>Author: " + item.volumeInfo.authors;
         document.getElementById("content").innerHTML += "<br>Pulisher: " + item.volumeInfo.publisher;
@@ -69,6 +68,7 @@ var app = {
         document.getElementById("content").innerHTML += "<br>Book Summary: " + item.searchInfo.textSnippet;
      }
     } 
+ 
             
 
                         
