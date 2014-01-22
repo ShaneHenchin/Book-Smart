@@ -56,14 +56,7 @@ var app = {
         jq.src = "https://www.googleapis.com/books/v1/volumes?q=isbn:9780735619678&callback=handleResponse"
         document.getElementsByTagName('head')[0].appendChild(jq);
             
-                        
-            console.log(result);
-
-        }, 
-        
-        //document.write("<script src='https://www.googleapis.com/books/v1/volumes?q=isbn:0735619670&callback=handleResponse'><\/script>")
-        
-      function handleResponse(response) {
+                  function handleResponse(response) {
       for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
         document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
@@ -75,7 +68,15 @@ var app = {
         document.getElementById("content").innerHTML += "<br>Published Date: " + item.volumeInfo.publishedDate;
         document.getElementById("content").innerHTML += "<br>Book Summary: " + item.searchInfo.textSnippet;
       }
-    },
+    }
+                        
+            console.log(result);
+
+        }, 
+        
+        //document.write("<script src='https://www.googleapis.com/books/v1/volumes?q=isbn:0735619670&callback=handleResponse'><\/script>")
+        
+
         
         function (error) { 
             console.log("Scanning failed: ", error); 
