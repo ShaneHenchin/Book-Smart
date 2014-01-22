@@ -50,11 +50,11 @@ var app = {
                 "cancelled: " + result.cancelled + "\n");
             document.getElementById("info").innerHTML = result.text;
                     //var isbnText = "0735619670"
-            document.write("<script src='https://www.googleapis.com/books/v1/volumes?q=isbn:0735619670&callback=handleResponse'><\/script>");
+            //document.write("<script src='https://www.googleapis.com/books/v1/volumes?q=isbn:0735619670&callback=handleResponse'><\/script>");
             
 
             
-            //console.log(result);
+            console.log(result);
 
         }, 
         
