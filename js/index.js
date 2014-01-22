@@ -50,7 +50,22 @@ var app = {
                 "cancelled: " + result.cancelled + "\n");
             document.getElementById("info").innerHTML = result.text;
                     //var isbnText = "0735619670"
-            //document.write("<script src='https://www.googleapis.com/books/v1/volumes?q=isbn:"+result.text+"&callback=handleResponse'><\/script>");
+            document.write("<script src='https://www.googleapis.com/books/v1/volumes?q=isbn:"+result.text+"&callback=handleResponse'><\/script>");
+            
+                  function handleResponse(response) {
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
+        document.getElementById("img1").width += 200;
+        document.getElementById("img1").height += 200;
+        document.getElementById("content").innerHTML += "<br>Title: " + item.volumeInfo.title;
+        document.getElementById("content").innerHTML += "<br>Author: " + item.volumeInfo.authors;
+        document.getElementById("content").innerHTML += "<br>Pulisher: " + item.volumeInfo.publisher;
+        document.getElementById("content").innerHTML += "<br>Published Date: " + item.volumeInfo.publishedDate;
+        document.getElementById("content").innerHTML += "<br>Book Summary: " + item.searchInfo.textSnippet;
+      }
+    }
+            
             console.log(result);
 
         }, function (error) { 
