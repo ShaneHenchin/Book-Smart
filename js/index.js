@@ -55,9 +55,9 @@ var app = {
                   function handleResponse(response) {
       for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
-        document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
-        document.getElementById("img1").width += 200;
-        document.getElementById("img1").height += 200;
+        //document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
+        //document.getElementById("img1").width += 200;
+        //document.getElementById("img1").height += 200;
         document.getElementById("content").innerHTML += "<br>Title: " + item.volumeInfo.title;
         document.getElementById("content").innerHTML += "<br>Author: " + item.volumeInfo.authors;
         document.getElementById("content").innerHTML += "<br>Pulisher: " + item.volumeInfo.publisher;
@@ -66,7 +66,7 @@ var app = {
       }
     }
             
-            console.log(result);
+            //console.log(result);
 
         }, function (error) { 
             console.log("Scanning failed: ", error); 
