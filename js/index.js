@@ -53,7 +53,7 @@ var app = {
                     //var isbnText = "0735619670"            
             console.log(result);
             
-            
+            window.open("ISBN_Details.html?ISBN=9780735619678","_self");
         }, 
 
         function (error) { 
@@ -63,7 +63,7 @@ var app = {
    
 };
 
-window.open("ISBN_Details.html?ISBN=9780735619678","_self");
+
 
 
 
