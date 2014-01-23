@@ -1,0 +1,36 @@
+<!DOCTYPE html 
+
+<html>
+<body>
+	    <img id="img1" >
+    	<div id="content2"></div>
+
+		<script>
+        function handleResponse(response) {
+        for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
+        document.getElementById("img1").width += 200;
+        document.getElementById("img1").height += 200;
+        document.getElementById("content2").innerHTML += "<br><b>Title:</b> " + item.volumeInfo.title;
+        document.getElementById("content2").innerHTML += "<br><b>Author:</b> " + item.volumeInfo.authors;
+        document.getElementById("content2").innerHTML += "<br><b>Pulisher:</b> " + item.volumeInfo.publisher;
+        document.getElementById("content2").innerHTML += "<br><b>Published Date:</b> " + item.volumeInfo.publishedDate;
+        document.getElementById("content2").innerHTML += "<br><b>Book Summary:</b> " + item.searchInfo.textSnippet;
+     }
+    } 
+	</script>
+	
+	
+	<script>
+
+	var ISBN_No = location.href.substring((location.href.indexOf('ISBN=')+5), location.href.length);
+    var script = document.createElement("script");
+    script.src = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + ISBN_No + '&callback=handleResponse';
+    script.type = "text/javascript";
+    document.getElementsByTagName("head")[0].appendChild(script);
+
+</script>
+     
+
+  </body>    
