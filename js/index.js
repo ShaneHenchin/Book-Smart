@@ -53,7 +53,6 @@ var app = {
       
             console.log(result);
             
-            //window.open("ISBN_Details.html?ISBN=9780735619678","_self");
             window.open("ISBN_Details.html?ISBN=" + result.text ,"_self");
         }, 
 
