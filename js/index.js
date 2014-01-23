@@ -40,20 +40,21 @@ var app = {
 
         scanner.scan( function (result) { 
 
-            alert("Barcode read...\n" + 
-            "Result: " + result.text + "\n" + 
-            "Format: " + result.format + "\n" + 
-            "Cancelled: " + result.cancelled);  
+           // alert("Barcode read...\n" + 
+           // "Result: " + result.text + "\n" + 
+           // "Format: " + result.format + "\n" + 
+           // "Cancelled: " + result.cancelled);  
 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
             document.getElementById("info").innerHTML = result.text;
-                    //var isbnText = "0735619670"            
+      
             console.log(result);
             
-            window.open("ISBN_Details.html?ISBN=9780735619678","_self");
+            //window.open("ISBN_Details.html?ISBN=9780735619678","_self");
+            window.open("ISBN_Details.html?ISBN=" + result.text ,"_self");
         }, 
 
         function (error) { 
