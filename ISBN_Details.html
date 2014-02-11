@@ -1,11 +1,15 @@
-<!DOCTYPE html 
-
 <html>
+
+<head>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+
 <body>
 	    <img id="img1" >
     	<div id="content2"></div>
 
-		<script>
+		<script>       
         function handleResponse(response) {
         for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
@@ -15,8 +19,6 @@
             publisher:item.volumeInfo.publisher,
             textSnippet:item.volumeInfo.textSnippet
         };
-
-        alert(book_details.title);
 
         document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
         //document.getElementById("img1").width += 200;
@@ -42,5 +44,7 @@
 
 </script>
      
+     <script type="text/javascript" src="js/save.js"></script>
 
   </body>    
+  </html>
