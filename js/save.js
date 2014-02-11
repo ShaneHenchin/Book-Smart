@@ -1,7 +1,20 @@
  $('#btnSave').click(function(){
- 	alert('About to call AJAX');
  	alert(book_details.title);
- 	alert('after');
+ 	alert(book_details.authors);
+ 	alert(book_details.publisher);
+ 	$.ajax({ 
+		url: 'http://booksmart.webege.com/save.php',
+         dataType: "json",
+         data: book_details,
+         type: 'post',
+         success: function(output) {
+            alert("success");
+         },
+        error: function (request, status, error) {
+            alert('error');
+            alert(error);
+        }
+	});
     $.ajax({
         type: 'POST',
         url: 'http://booksmart.webege.com/save.php',
