@@ -1,12 +1,8 @@
  $('#btnSave').click(function(){
- 	alert(book_details.title);
- 	alert(book_details.authors);
- 	alert(book_details.publisher);
-    var data = JSON.stringify(book_details);
  	$.ajax({ 
-		url: 'http://booksmart.webege.com/save.php',
+		url: 'http://henchinshoodies.comuv.com/save.php',
          dataType: "json",
-         data: data,
+         data: book_details,
          type: 'post',
          success: function(output) {
             alert("success");
@@ -20,11 +16,10 @@
 
  $('#searchBox').keyup(function(){
 var textVal = $("#searchBox").val();
-var data = JSON.stringify({searchQuery: textVal});
 //alert(textVal);
-$.ajax({ url: 'http://booksmart.webege.com/search.php',
+$.ajax({ url: 'http://henchinshoodies.comuv.com/search2.php',
          dataType: "json",
-         data: data,
+         data: searchQuery: textVal,
          type: 'post',
          success: function(output) {
             alert(output);
