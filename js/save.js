@@ -19,7 +19,7 @@ var textVal = $("#searchBox").val();
 //alert(textVal);
 $.ajax({ url: 'http://henchinshoodies.comuv.com/search2.php',
          dataType: "json",
-         data: searchQuery: textVal,
+         data: {searchQuery: textVal},
          type: 'post',
          success: function(output) {
             alert(output);
