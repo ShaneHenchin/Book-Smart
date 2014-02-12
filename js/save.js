@@ -21,7 +21,7 @@ alert(textVal);
 $.ajax({ url: 'http://henchinshoodies.comuv.com/search2.php',
          dataType: "json",
          data: {searchQuery: textVal},
-         type: 'post',
+         type: 'GET',
          success: function(output) {
             alert("success");
             alert(output);
