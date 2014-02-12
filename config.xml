@@ -13,8 +13,6 @@
         Shane Henchin
     </author>
     
-    <access origin="*" />
-
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
 
     <feature name="http://api.phonegap.com/1.0/device" />
@@ -39,5 +37,7 @@
     <gap:splash src="res/screen/android/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
     <gap:splash src="res/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
     <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
+    
+    <access origin="*" />
 
 </widget>
