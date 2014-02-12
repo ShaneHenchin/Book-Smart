@@ -12,6 +12,8 @@
     <author href="http://phonegap.com" email="shanehenchin@gmail.com">
         Shane Henchin
     </author>
+    
+    <access origin="*" />
 
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
 
