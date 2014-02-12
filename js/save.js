@@ -39,6 +39,10 @@ $.ajax({ url: 'http://booksmart.webege.com/search.php',
          type: 'post',
          success: function(output) {
                       $('#resultsDiv').html(output);
-                  }
+                  },
+        error: function (request, status, error) {
+            alert('error');
+            alert(error);
+        }
 });
 });
