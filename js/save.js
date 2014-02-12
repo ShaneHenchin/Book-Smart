@@ -38,6 +38,7 @@ $.ajax({ url: 'http://booksmart.webege.com/search.php',
          data: {searchQuery: textVal},
          type: 'post',
          success: function(output) {
+            alert(output);
                       $('#resultsDiv').html(output);
                   },
         error: function (request, status, error) {
