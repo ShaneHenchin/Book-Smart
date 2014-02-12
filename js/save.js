@@ -29,3 +29,16 @@
         }
     });
  });
+
+ $('#searchBox').keyup(function(){
+var textVal = $("#searchBox").val();
+//alert(textVal);
+$.ajax({ url: 'http://booksmart.webege.com/search.php',
+         dataType: "json",
+         data: {searchQuery: textVal},
+         type: 'post',
+         success: function(output) {
+                      $('#resultsDiv').html(output);
+                  }
+});
+});

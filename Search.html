@@ -51,16 +51,21 @@ input.submit-button {
     cursor:pointer;
  //right:15px;
 }</style>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
 	</head>
 
 	<body>
 		<div class="search-wrapper">
         <form action="search.php" method="get" name="search">
           <div class="search-box"><img class="search-icon" src="img/Search Icon.jpg" width="21" height="18" alt="search icon" />
-            <input name="seach" type="text" value="Search for book" />
+            <input name="seach" id="searchBox" type="text" placeholder="Search for book" />
           </div>
-          <input class="submit-button" name="Go" type="submit" />
         </form>
         </div> 
+        <div id="resultsDiv"></div>
+        <script type="text/javascript" src="js/save.js"></script>
 	</body>
 </html>
