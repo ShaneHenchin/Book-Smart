@@ -1,34 +1,31 @@
 <?php
-$hostname='mysql14.000webhost.com';
-$username='a9644992_shane';
-$password='password1';
-$database='a9644992_FYP';
-
-$image="blaaaah";
-$title="The Hunger Games";
-$authors="Eanna Mulrooney";
-$publisher="Shane Henchin";
-$publishedDate= new DateTime('2012-01-01');
-$textSnippet="Eanna Mulrooney is a....";
-
+$hostname='mysql6.000webhost.com';
+$username='a7283747_henchin';
+$password='henchinshoodies91';
+$database='a7283747_henchin';
+ 
+ 
+$title = $_POST['title'];
+$authors = $_POST['authors'];
+$publisher = $_POST['publisher'];
+$textSnippet = $_POST['textSnippet'];
+ 
 try {
     $dbh = new PDO("mysql:host=$hostname;dbname=$database",$username,$password);
  
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
  
-
-$sql = "INSERT INTO book_details (image,title,authors,publisher,publishedDate,textSnippet) VALUES (:image,:title,:authors,:publisher,:publishedDate,:textSnippet)";
-
+ 
+$sql = "INSERT INTO book_details (title,authors,publisher,textSnippet) VALUES (:title,:authors,:publisher,:textSnippet)";
+ 
 $q = $dbh->prepare($sql);
-
-$q->execute(array(':image'=>$image,
-                    ':title'=>$title,
+ 
+$q->execute(array(':title'=>$title,
                     ':authors'=>$authors,
                     ':publisher'=>$publisher,
-                    ':publishedDate'=>$publishedDate,
                     ':textSnippet'=>$textSnippet));
-
-    
+ 
+ 
     }
 catch(PDOException $e)
     {
