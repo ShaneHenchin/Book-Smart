@@ -1,4 +1,4 @@
-/* $('#btnSave').click(function(){
+ $('#btnSave').click(function(){
  	$.ajax({ 
 		url: 'http://henchinshoodies.comuv.com/save.php',
          dataType: "json",
@@ -12,24 +12,23 @@
             alert(error);
         }
 	});
-    });*/
+    });
 
 $('#searchBox').keyup(function(){
 var textVal = $("#searchBox").val();
 var data = {searchQuery: textVal};
-alert(textVal);
 $.ajax({ url: 'http://henchinshoodies.comuv.com/search2.php',
          dataType: "json",
          data: {searchQuery: textVal},
          type: 'GET',
          success: function(output) {
             alert("success");
-            alert(output);
+            /*alert(output);*/
                       $('#resultsDiv').html(output);
         },
         error: function (request, status, error) {
             alert('error');
-            alert(error);
+           /* alert(error);*/
         }
 });
 });
