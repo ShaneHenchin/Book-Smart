@@ -14,7 +14,7 @@
 
          dataType: "json",
 
-         data: book_details
+         data: book_details,
 
          type: 'post',
 
