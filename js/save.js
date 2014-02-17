@@ -1,20 +1,20 @@
  $('#btnSave').click(function(){
 
-    alert(book_details.title);
+    //alert(book_details.title);
 
-    alert(book_details.authors);
+    //alert(book_details.authors);
 
-    alert(book_details.publisher);
+    //alert(book_details.publisher);
 
-    var data = JSON.stringify(book_details);
+    //var data = JSON.stringify(book_details);
 
     $.ajax({ 
 
-        url: 'http://booksmart.webege.com/save.php',
+        url: 'http://henchinshoodies.comuv.com/save.php',
 
          dataType: "json",
 
-         data: {searchQuery: textVal},
+         data: book_details
 
          type: 'post',
 
