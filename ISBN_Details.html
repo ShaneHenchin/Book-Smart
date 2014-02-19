@@ -17,7 +17,8 @@
             title:item.volumeInfo.title,
             authors:item.volumeInfo.authors,
             publisher:item.volumeInfo.publisher,
-            textSnippet:item.volumeInfo.textSnippet
+            textSnippet:item.searchInfo.textSnippet,
+            bookImage:item.volumeInfo.imageLinks.thumbnail
         };
 
         document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
@@ -32,7 +33,8 @@
     } 
 	</script>
 
-	<input name="price" id="priceBox" type="number" placeholder="Enter price" />
+    <input name="price" id="retailPrice" type="number" placeholder="Retail Price" />
+	<input name="price" id="salePrice" type="number" placeholder="For Sale Price" />
     <button type="button" id="btnSave">Upload</button>
 
 	<script>
@@ -43,7 +45,7 @@
     script.type = "text/javascript";
     document.getElementsByTagName("head")[0].appendChild(script);
 
-</script>
+    </script>
      
      <script type="text/javascript" src="js/save.js"></script>
 
