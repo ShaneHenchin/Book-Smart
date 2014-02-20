@@ -8,9 +8,7 @@ $('#btnSave').click(function(){
 
     var data = JSON.stringify(book_details);
 
-    $.ajax({ 
-
-        url: 'http://booksmart.webege.com/save.php',
+    $.ajax({ url: 'http://henchinshoodies.comuv.com/save.php',
 
          dataType: "json",
 
