@@ -1,16 +1,12 @@
-$('#btnSave').click(function(){
+$('#btnWanted').click(function(){
 
-    alert(book_details.title);
-
-    alert(book_details.authors);
-
-    alert(book_details.publisher);
+    alert(book_details.bookName);
 
     var data = JSON.stringify(book_details);
 
     $.ajax({ 
 
-        url: 'http://booksmart.webege.com/save.php',
+        url: 'http://booksmart.webege.com/wanted.php',
 
          dataType: "json",
 

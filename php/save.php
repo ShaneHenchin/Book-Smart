@@ -7,7 +7,7 @@ $database='a7283747_henchin';
  
 $bookImage = $_POST['bookImage'];
 $title = $_POST['title'];
-$authors = $_POST['authors'];
+$author = $_POST['author'];
 $publisher = $_POST['publisher'];
 $textSnippet = $_POST['textSnippet'];
 $retailPrice = $_POST['retailPrice'];
@@ -16,16 +16,16 @@ $salePrice = $_POST['salePrice'];
 try {
     $dbh = new PDO("mysql:host=$hostname;dbname=$database",$username,$password);
  
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  
  
-$sql = "INSERT INTO book_details(1) (bookImage,title,authors,publisher,textSnippet,retailPrice,salePrice) VALUES (:bookImage,:title,:authors,:publisher,:textSnippet,:retailPrice,:salePrice)";
+$sql = "INSERT INTO book_details (bookImage,title,author,publisher,textSnippet,retailPrice,salePrice) VALUES (:bookImage,:title,:author,:publisher,:textSnippet,:retailPrice,:salePrice)";
  
 $q = $dbh->prepare($sql);
  
 $q->execute(array(':bookImage'=>$bookImage,
 	                ':title'=>$title,
-                    ':authors'=>$authors,
+                    ':author'=>$author,
                     ':publisher'=>$publisher,
                     ':textSnippet'=>$textSnippet,
                     ':retailPrice'=>$retailPrice,

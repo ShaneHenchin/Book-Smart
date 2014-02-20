@@ -11,7 +11,7 @@ $searchQuery=$_POST['searchQuery'];
  
  
  
-//$searchQuery = "hun";
+//$searchQuery = "hunger games"; provisional testing of code before database connection
  
  
 try {
@@ -20,11 +20,11 @@ try {
  
  
  
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
  
  
  
-    $sql = "SELECT * FROM book_details WHERE title LIKE '%$searchQuery%'";
+    $sql = "SELECT * FROM book_details WHERE title LIKE '%$searchQuery%'";   //SQL query using wildcards to search for all possible answers
  
 $q = $dbh->prepare($sql);
  
