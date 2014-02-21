@@ -4,8 +4,6 @@ $('#btnSave').click(function(){
 
     alert(book_details.authors);
 
-    alert(book_details.publisher);
-
     var data = JSON.stringify(book_details);
 
     $.ajax({ url: 'http://henchinshoodies.comuv.com/save.php',

@@ -6,7 +6,7 @@ $('#btnWanted').click(function(){
 
     $.ajax({ 
 
-        url: 'http://booksmart.webege.com/wanted.php',
+        url: 'http://henchinshoodies.comuv.com/wanted.php',
 
          dataType: "json",
 
