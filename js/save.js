@@ -1,16 +1,17 @@
 $('#btnSave').click(function(){
 
-    alert(book_details.title);
+    var title=book_details.title;
+    var authors=book_details.authors;
+    var publisher=book_details.publisher;
+    var textSnippet=book_details.textSnippet;
 
-    alert(book_details.authors);
+    alert(title);
 
-    var data = JSON.stringify(book_details);
-
-    $.ajax({ url: 'http://henchinshoodies.comuv.com/save.php',
+     $.ajax({ url: 'http://henchinshoodies.comuv.com/save.php',
 
          dataType: "json",
 
-         data: {searchQuery: textVal},
+         data: {title:title, authors:authors, publisher:publisher, textSnippet:textSnippet},
 
          type: 'post',
 
