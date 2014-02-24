@@ -13,11 +13,12 @@
         function handleResponse(response) {
         for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
-        bookDetails= {
+        BookDetails= {
             title:item.volumeInfo.title,
             authors:item.volumeInfo.authors,
             publisher:item.volumeInfo.publisher,
-            textSnippet:item.searchInfo.textSnippet
+            textSnippet:item.searchInfo.textSnippet,
+            bookImage:item.volumeInfo.imageLinks.thumbnail
         };
 
         document.getElementById("img1").src += item.volumeInfo.imageLinks.thumbnail;
