@@ -1,8 +1,8 @@
 $('#btnWanted').click(function(){
 
-    alert(book_details.bookName);
+    var bookName=wanted.bookName;
 
-    var data = JSON.stringify(book_details);
+    alert(wanted.bookName);
 
     $.ajax({ 
 
@@ -10,7 +10,7 @@ $('#btnWanted').click(function(){
 
          dataType: "json",
 
-         data: {searchQuery: textVal},
+         data: {bookName:bookName},
 
          type: 'post',
 
